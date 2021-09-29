@@ -1,0 +1,34 @@
+
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: my_second_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+sources:
+  - name: singapore_stage
+    description: "gold table of house data"
+    #database: demo_db
+    schema: datastage
+    tables: 
+      - name: book_data
+        description: "Book Details"
+      #tables: 
+      - name: user_data
+        description: "Users Details"
+      - name: iris
+        description: "iris Details"
